@@ -1,0 +1,32 @@
+.c-label{
+  font-weight: 400;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 6px;
+  color: $color-main;
+  font-size: 13px;
+  padding: 6px 11px;
+  vertical-align: bottom;
+  @include mq(md){
+    font-size: 12px;
+  }
+  @include mq(){
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+  &--form{
+    background-color: $color-err-form;
+  }
+  &--category{
+    background-color: $color-notify;
+  }
+  &--active{
+    background-color: $color-acc;
+  }
+  &--inactive{
+    background-color: $color-curtain;
+  }
+  &--cleared{
+    background-color: $color-cleared;
+  }
+}

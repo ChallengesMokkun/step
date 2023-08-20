@@ -1,0 +1,13 @@
+.c-plain-text{
+  font-size: $font-size-default;
+  color: $color-sub;
+  line-height: $plain-text-line-height-default;
+  white-space: pre-wrap;
+  word-wrap:break-word;
+  @include mq(md){
+    font-size: $font-size-phab-default;
+  }
+  @include mq(){
+    font-size: $font-size-sp-default;
+  }
+}

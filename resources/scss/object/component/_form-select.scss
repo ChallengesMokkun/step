@@ -1,0 +1,66 @@
+.c-form-select{
+  display: inline-block;
+  position: relative;
+  &::before{
+    border-bottom: 4px solid $color-outline;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    content: "";
+    position: absolute;
+    width: 0;
+    z-index: -1;
+  }
+  &::after{
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid $color-outline;
+    content: "";
+    position: absolute;
+    width: 0;
+    z-index: -1;
+  }
+  &--category{
+    min-width: 145px;
+    @include mq(){
+      min-width: initial;
+    }
+  }
+  &__select-box{
+    font-family: $font-family-1, $font-family-2, $font-family-default;
+    box-sizing: border-box;
+    border: 1px solid $color-outline;
+    border-radius: 6px;
+    padding: 11px 24px 11px 16px;
+    font-size: $font-size-default;
+    font-weight: 200;
+    color: $color-sub;
+    height: 100%;
+    background-color: transparent;
+    &:hover{
+      cursor: pointer;
+    }
+    &:focus,
+    &:focus-visible{
+      outline: 0;
+      border: 1px solid $color-focus;
+      box-shadow: 0 0 6px $color-focus;
+    }
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+      padding: 8px 24px 8px 16px;
+    }
+    &--err{
+      background-color: $color-err-form-translucent;
+      border: none;
+      &:focus,
+      &:focus-visible{
+        outline: 0;
+        border: 1px solid $color-err;
+        box-shadow: 0 0 6px $color-err;
+      }
+    }
+  }
+}

@@ -1,0 +1,268 @@
+.p-step-card{
+  background-color: $color-back;
+  position: relative;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px $color-outline;
+  transition: all 1s;
+  &:nth-of-type(2n){
+    margin-left: 15px;
+    @include mq(md){
+      margin-left: initial;
+    }
+  }
+  &:hover{
+    transform: translateY(5px);
+    box-shadow: 0 1px 2px $color-sub;
+    transition: all .5s;
+  }
+  &__wrapper{
+    display: block;
+    box-sizing: border-box;
+    width: 440px;
+    padding: map-get($step-card-padding-top, default) map-get($step-card-padding-Hn, default) map-get($step-card-padding-btm, default) map-get($step-card-padding-Hn, default);
+    @include mq(lg){
+      width: 320px;
+      padding: map-get($step-card-padding-top, lg) map-get($step-card-padding-Hn, lg) map-get($step-card-padding-btm, lg) map-get($step-card-padding-Hn, lg);
+    }
+    @include mq(md){
+      width: 440px;
+      padding: map-get($step-card-padding-top, md) map-get($step-card-padding-Hn, md) map-get($step-card-padding-btm, md) map-get($step-card-padding-Hn, md);
+    }
+    @include mq(){
+      width: 320px;
+      padding: map-get($step-card-padding-top, sm) map-get($step-card-padding-Hn, sm) map-get($step-card-padding-btm, sm) map-get($step-card-padding-Hn, sm);
+    }
+  }
+  &__label{
+    @include mq(lg){
+      font-size: 10px;
+      padding: 4px 9px;
+    }
+    @include mq(md){
+      font-size: 13px;
+      padding: 6px 11px;
+    }
+    @include mq(){
+      font-size: 10px;
+      padding: 4px 9px;
+    }
+  }
+  &__label-category-link{
+    position: absolute;
+    top: map-get($step-card-padding-top, default);
+    left: map-get($step-card-padding-Hn, default);
+    &:hover{
+      background-color: $color-acc;
+    }
+    @include mq(lg){
+      top: map-get($step-card-padding-top, lg);
+      left: map-get($step-card-padding-Hn, lg);
+    }
+    @include mq(md){
+      top: map-get($step-card-padding-top, md);
+      left: map-get($step-card-padding-Hn, md);
+    }
+    @include mq(){
+      top: map-get($step-card-padding-top, sm);
+      left: map-get($step-card-padding-Hn, sm);
+    }
+  }
+  &__label-pubflg{
+    position: absolute;
+    bottom: 10px;
+  }
+  &__header{
+    display: flex;
+    margin-bottom: 11px;
+  }
+  &__footer{
+    display: flex;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  &__footer-container{
+    flex-basis: 50%;
+  }
+  &__datetime{
+    color: $color-sub;
+    margin-left: auto;
+  }
+  &__datetime-icon{
+    @include mq(lg){
+      width: 13px;
+      height: 13px;
+      margin-right: 3px;
+    }
+    @include mq(md){
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+    }
+    @include mq(){
+      width: 13px;
+      height: 13px;
+      margin-right: 3px;
+    }
+  }
+  &__datetime-text{
+    color: $color-sub;
+    @include mq(lg){
+      font-size: 12px;
+    }
+    @include mq(md){
+      font-size: 16px;
+    }
+    @include mq(){
+      font-size: 12px;
+    }
+  }
+  &__item{
+    color: $color-sub;
+    display: inline-block;
+    width: 100%;
+    @include mq(lg){
+      font-size: 12px;
+    }
+    @include mq(md){
+      font-size: 16px;
+    }
+    @include mq(){
+      font-size: 12px;
+    }
+  }
+  &__title{
+    overflow: hidden;
+    color: $color-sub;
+    margin-bottom: 6px;
+    padding-bottom: 3px;
+    //heightを調整する
+    @include stepCardCharHt($step-card-title-font-size, $step-card-title-lines, default);
+    @include mq(lg){
+      @include stepCardCharHt($step-card-title-font-size, $step-card-title-lines, lg);
+    }
+    @include mq(md){
+      @include stepCardCharHt($step-card-title-font-size, $step-card-title-lines, md);
+    }
+    @include mq(){
+      @include stepCardCharHt($step-card-title-font-size, $step-card-title-lines, sm);
+    }
+  }
+  &__plain-text{
+    overflow: hidden;
+    margin-bottom: 16px;
+    padding-bottom: 3px;
+    //font-sizeとline-heightを調整する
+    @include formatFontHt($step-card-phrase-font-size, $step-card-char-line-height, default);
+    //heightを調整する
+    @include stepCardCharHt($step-card-phrase-font-size, $step-card-phrase-lines, default);
+    @include mq(lg){
+      padding-bottom: 2px;
+      @include formatFontHt($step-card-phrase-font-size, $step-card-char-line-height, lg);
+      @include stepCardCharHt($step-card-phrase-font-size, $step-card-phrase-lines, lg);
+    }
+    @include mq(md){
+      padding-bottom: 3px;
+      @include formatFontHt($step-card-phrase-font-size, $step-card-char-line-height, md);
+      @include stepCardCharHt($step-card-phrase-font-size, $step-card-phrase-lines, md);
+    }
+    @include mq(){
+      padding-bottom: 2px;
+      @include formatFontHt($step-card-phrase-font-size, $step-card-char-line-height, sm);
+      @include stepCardCharHt($step-card-phrase-font-size, $step-card-phrase-lines, sm);
+    }
+  }
+  &__contributor{
+    position: absolute;
+    bottom: 12px;
+    left: map-get($step-card-padding-Hn, default);
+    @include mq(lg){
+      bottom: 10px;
+      left: map-get($step-card-padding-Hn, lg);
+    }
+    @include mq(md){
+      bottom: 12px;
+      left: map-get($step-card-padding-Hn, md);
+    }
+    @include mq(){
+      bottom: 10px;
+      left: map-get($step-card-padding-Hn, sm);
+    }
+  }
+  &__contributor-pic-wrapper{
+    @include mq(lg){
+      width: 18px;
+      height: 18px;
+    }
+    @include mq(md){
+      width: 24px;
+      height: 24px;
+    }
+    @include mq(){
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &__contributor-name{
+    @include mq(lg){
+      font-size: 13px;
+    }
+    @include mq(md){
+      font-size: 16px;
+    }
+    @include mq(){
+      font-size: 13px;
+    }
+  }
+
+  &__link{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+  &__anchor{
+    font-size: $font-size-default;
+    @include mq(lg){
+      font-size: 13px;
+    }
+    @include mq(md){
+      font-size: 16px;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+  &__status-bar{
+    position: absolute;
+    width: calc(100% - #{map-get($step-card-padding-Hn, default)} * 2);//親要素 - padding左右
+    left: map-get($step-card-padding-Hn, default); //padding左
+    bottom: 13px;
+    @include mq(lg){
+      width: calc(100% - #{map-get($step-card-padding-Hn, lg)} * 2);
+      left: map-get($step-card-padding-Hn, lg);
+      bottom: 10px;
+    }
+    @include mq(md){
+      width: calc(100% - #{map-get($step-card-padding-Hn, md)} * 2);
+      left: map-get($step-card-padding-Hn, md);
+      bottom: 13px;
+    }
+    @include mq(){
+      width: calc(100% - #{map-get($step-card-padding-Hn, sm)} * 2);
+      left: map-get($step-card-padding-Hn, sm);
+      bottom: 10px;
+    }
+  }
+  &__status-text{
+    font-size: 13px;
+    @include mq(lg){
+      font-size: 11px;
+    }
+    @include mq(md){
+      font-size: 13px;
+    }
+    @include mq(){
+      font-size: 11px;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+// メディアクエリ
+@mixin mq($breakpoint: sm){
+  @media #{map-get($breakpoints, $breakpoint)}{
+    @content;
+  }
+}
+
+//textareaのheightとfont-sizeとline-heightを調整する
+@mixin textareaHt($font-size-map, $lineNum, $breakpoint){
+  line-height: floor(map-get($font-size-map, $breakpoint) * $textarea-line-height);
+  font-size: map-get($font-size-map, $breakpoint);
+  height: floor(map-get($font-size-map, $breakpoint) * $textarea-line-height) * $lineNum + $textarea-padding-Vt * 2;
+}
+
+//titleのmax-heightを調整する
+@mixin titleMaxHt($font-size-map, $lineNum, $breakpoint){
+  max-height: floor(map-get($font-size-map, $breakpoint) * $title-line-height * $lineNum);
+}
+
+//font-sizeとline-heightを調整する
+@mixin formatFontHt($font-size-map, $line-height, $breakpoint){
+  line-height: floor(map-get($font-size-map, $breakpoint) * $line-height);
+  font-size: map-get($font-size-map, $breakpoint);
+}
+
+//step-card titleとplain-textのheightを調整する
+@mixin stepCardCharHt($font-size-map, $lineNum, $breakpoint){
+  height: floor(map-get($font-size-map, $breakpoint) * $step-card-char-line-height) * $lineNum;
+}
+
+//plain-text min-heightを調整する
+@mixin plainTextMinHt($font-size-map, $lineNum, $breakpoint){
+  min-height: floor(map-get($font-size-map, $breakpoint) * $plain-text-line-height-default) * $lineNum;
+}
+
+//STEP詳細・子STEP詳細・STEP登録・編集
+//list-number
+//list-numberを丸める
+@mixin roundListNum($breakpoint){
+  border-radius: calc(#{map-get($list-num-size, $breakpoint)} / 2);
+}
+//list-numberの線の太さと横方向の位置調整
+@mixin adjustListLineHn($breakpoint){
+  width: map-get($list-line-thickness, $breakpoint);
+  left: calc((#{map-get($list-num-size, $breakpoint)} - #{map-get($list-line-thickness, $breakpoint)}) / 2);
+}
+
+//STEP詳細・子STEP詳細
+//list-numberの線の長さと縦方向の位置調整
+@mixin adjustListLineVt($breakpoint, $padding-top: 0px){
+  // border + 親要素 - 数字 + 数字とtitle-wrapperの差の半分 (STEP1のみ + padding上の不足分)
+  height: calc(#{$small-step-border-thickness} + 100% - #{map-get($list-num-size, $breakpoint)} + (#{map-get($small-step-title-ht, $breakpoint)} - #{map-get($list-num-size, $breakpoint)}) / 2 + #{$padding-top});
+  // 数字 + padding上 (STEP1のみ - padding上)
+  top: calc(#{map-get($small-step-padding-Vt, $breakpoint)} + #{map-get($list-num-size, $breakpoint)} - #{$padding-top});
+}
+
+//STEP登録・編集
+//step-wrapperのwidthを調整
+@mixin adjustStepWrapperWd($breakpoint){
+  //親要素 - (数字 + 数字のmargin-right)
+  width: calc(100% - (#{map-get($list-num-size, $breakpoint)} + #{map-get($list-num-form-margin-r, $breakpoint)}));
+}
+
+
+

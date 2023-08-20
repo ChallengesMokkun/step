@@ -1,0 +1,140 @@
+.p-small-step{
+  position: relative;
+  border-bottom: $small-step-border-thickness solid $color-outline;
+  padding-top: map-get($small-step-padding-Vt, default);
+  padding-bottom: map-get($small-step-padding-Vt, default);
+  @include mq(lg){
+    padding-top: map-get($small-step-padding-Vt, lg);
+    padding-bottom: map-get($small-step-padding-Vt, lg);
+  }
+  @include mq(md){
+    padding-top: map-get($small-step-padding-Vt, md);
+    padding-bottom: map-get($small-step-padding-Vt, md);
+  }
+  @include mq(){
+    padding-top: map-get($small-step-padding-Vt, sm);
+    padding-bottom: map-get($small-step-padding-Vt, sm);
+  }
+  &:first-of-type{
+    padding-top: initial;
+    .p-small-step__line{
+      //線の長さ(height)と縦方向(top)の位置調整
+      @include adjustListLineVt(default, map-get($small-step-padding-Vt, default));
+      @include mq(lg){
+        @include adjustListLineVt(lg, map-get($small-step-padding-Vt, lg));
+      }
+      @include mq(md){
+        @include adjustListLineVt(md, map-get($small-step-padding-Vt, md));
+      }
+      @include mq(){
+        @include adjustListLineVt(sm, map-get($small-step-padding-Vt, sm));
+      }
+    }
+  }
+  &:last-of-type{
+    border: none;
+    .p-small-step__line:last-of-type{
+      display: none;
+    }
+  }
+  &__title-wrapper{
+    display: flex;
+    align-items: center;
+    height: map-get($small-step-title-ht, default);
+    @include mq(lg){
+      height: map-get($small-step-title-ht, lg);
+    }
+    @include mq(md){
+      height: map-get($small-step-title-ht, md);
+    }
+    @include mq(){
+      height: map-get($small-step-title-ht, sm);
+    }
+  }
+  &__number-wrapper{
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    @include mq(lg){
+      margin-right: 24px;
+    }
+    @include mq(md){
+      margin-right: 18px;
+    }
+    @include mq(){
+      margin-right: 13px;
+    }
+  }
+  &__line{
+    //線の長さ(height)と縦方向(top)の位置調整
+    @include adjustListLineVt(default);
+    @include mq(lg){
+      @include adjustListLineVt(lg);
+    }
+    @include mq(md){
+      @include adjustListLineVt(md);
+    }
+    @include mq(){
+      @include adjustListLineVt(sm);
+    }
+  }
+  &__title{
+    overflow: hidden;
+    max-width: 760px;
+    padding-bottom: 3px;
+    //max-heightを調整する
+    @include titleMaxHt($step-font-size, $step-lines, default);
+    @include mq(lg){
+      max-width: initial;
+      @include titleMaxHt($step-font-size, $step-lines, lg);
+    }
+    @include mq(md){
+      padding-bottom: 2px;
+      @include titleMaxHt($step-font-size, $step-lines, md);
+    }
+    @include mq(){
+      padding-bottom: 1px;
+      @include titleMaxHt($step-font-size, $step-lines, sm);
+    }
+  }
+  &__content-wrapper{
+    padding: 8px 16px;
+    margin-left: calc(#{map-get($list-num-size, default)} + 40px - (16px / 2)); //数字のwidth + 数字とタイトルのmargin - padding-leftの半分
+    margin-top: 24px;
+    background-color: $color-back;
+    border-radius: 6px;
+    //min-heightを調整する
+    @include plainTextMinHt($step-detail-font-size, $step-detail-lines-min, default);
+    @include mq(lg){
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: initial;
+      margin-right: initial;
+      @include plainTextMinHt($step-detail-font-size, $step-detail-lines-min, lg);
+    }
+    @include mq(md){
+      @include plainTextMinHt($step-detail-font-size, $step-detail-lines-min, md);
+    }
+    @include mq(){
+      padding-left: 13px;
+      padding-right: 13px;
+      margin-top: 16px;
+      margin-left: auto;
+      margin-right: auto;
+      width: calc(#{map-get($step-detail-font-size, sm)} * 23); //フォントサイズ * 文字数
+      @include plainTextMinHt($step-detail-font-size, $step-detail-lines-min, sm);
+    }
+  }
+  &__plain-text{
+    font-size: map-get($step-detail-font-size, default);
+    @include mq(lg){
+      font-size: map-get($step-detail-font-size, lg);
+    }
+    @include mq(md){
+      font-size: map-get($step-detail-font-size, md);
+    }
+    @include mq(){
+      font-size: map-get($step-detail-font-size, sm);
+    }
+  }
+}

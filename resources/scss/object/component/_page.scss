@@ -1,0 +1,43 @@
+.c-page{
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  &--active{
+    background-color: $color-notify;
+    border: none;
+  }
+  &__link{
+    color: $color-sub;
+    font-size: $font-size-default;
+    padding: 8px 5px;
+    text-align: center;
+    min-width: 21px;
+    @include mq(lg){
+      font-size: 15px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      min-width: 20px;
+    }
+    @include mq(md){
+      font-size: 13px;
+      padding: 5px 4px;
+      min-width: 17px;
+    }
+    @include mq(){
+      font-size: 11px;
+      padding: 4px 2px;
+      min-width: 14px;
+    }
+    &:hover{
+      color: $color-link;
+    }
+    &--active{
+      color: $color-main;
+      font-weight: 400;
+      &:hover{
+        cursor: default;
+        color: $color-main;
+      }
+    }
+  }
+}

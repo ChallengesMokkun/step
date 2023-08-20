@@ -1,0 +1,35 @@
+.c-item{
+  font-size: $font-size-default;
+  color: $color-sub;
+  @include mq(md){
+    font-size: $font-size-phab-default;
+  }
+  @include mq(){
+    font-size: $font-size-sp-default;
+  }
+  &--form{
+    vertical-align: bottom;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &--icon-text{
+    display: flex;
+    align-items: center;
+  }
+  &__icon{
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+  }
+  &__text{
+    font-size: $font-size-default;
+    color: $color-sub;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.c-contributor{
+  display: flex;
+  align-items: center;
+  &__pic-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    @include mq(md){
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &__pic{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  &__name{
+    color: $color-link;
+    font-size: $font-size-default;
+    &:hover{
+      text-decoration: underline;
+    }
+    &:active{
+      color: $color-acc;
+      text-decoration: none;
+    }
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+}

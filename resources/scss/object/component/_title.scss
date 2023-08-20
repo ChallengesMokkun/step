@@ -1,0 +1,131 @@
+.c-title{
+  white-space: pre-wrap;
+  word-wrap:break-word;
+  word-break: break-all;
+  &--main{
+    line-height: $title-line-height;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    @include mq(){
+      font-size: 24px;
+    }
+  }
+  &--step-detail{
+    font-weight: 400;
+    //font-sizeとline-heightを調整する
+    @include formatFontHt($step-title-font-size, $title-line-height, default);
+    @include mq(lg){
+      @include formatFontHt($step-title-font-size, $title-line-height, lg);
+      padding-bottom: 5px;
+    }
+    @include mq(md){
+      font-weight: 300;
+      @include formatFontHt($step-title-font-size, $title-line-height, md);
+    }
+    @include mq(){
+      @include formatFontHt($step-title-font-size, $title-line-height, sm);
+      padding-bottom: 4px;
+    }
+  }
+  &--step-detail-phrase{
+    font-weight: 200;
+    //font-sizeとline-heightを調整する
+    @include formatFontHt($phrase-font-size, $title-line-height, default);
+    @include mq(lg){
+      @include formatFontHt($phrase-font-size, $title-line-height, lg);
+    }
+    @include mq(md){
+      @include formatFontHt($phrase-font-size, $title-line-height, md);
+    }
+    @include mq(){
+      @include formatFontHt($phrase-font-size, $title-line-height, sm);
+    }
+  }
+  &--small-step{
+    font-weight: 400;
+    color: $color-link;
+    //font-sizeとline-heightを調整する
+    @include formatFontHt($step-font-size, $title-line-height, default);
+    @include mq(lg){
+      @include formatFontHt($step-font-size, $title-line-height, lg);
+    }
+    @include mq(md){
+      font-weight: 300;
+      @include formatFontHt($step-font-size, $title-line-height, md);
+    }
+    @include mq(){
+      @include formatFontHt($step-font-size, $title-line-height, sm);
+    }
+    &__link{
+      font-weight: 400;
+      color: $color-link;
+      transition: all .5s;
+      white-space: pre-wrap;
+      word-wrap:break-word;
+      //font-sizeとline-heightを調整する
+      @include formatFontHt($step-font-size, $title-line-height, default);
+      &:hover{
+        color: $color-acc;
+        transition: all .5s;
+      }
+      @include mq(lg){
+        @include formatFontHt($step-font-size, $title-line-height, lg);
+      }
+      @include mq(md){
+        font-weight: 300;
+        @include formatFontHt($step-font-size, $title-line-height, md);
+      }
+      @include mq(){
+        @include formatFontHt($step-font-size, $title-line-height, sm);
+      }
+    }
+  }
+  &--step-card{
+    font-weight: 300;
+    //font-sizeとline-heightを調整する
+    @include formatFontHt($step-card-title-font-size, $step-card-char-line-height, default);
+    @include mq(lg){
+      @include formatFontHt($step-card-title-font-size, $step-card-char-line-height, lg);
+    }
+    @include mq(md){
+      @include formatFontHt($step-card-title-font-size, $step-card-char-line-height, md);
+    }
+    @include mq(){
+      @include formatFontHt($step-card-title-font-size, $step-card-char-line-height, sm);
+    }
+  }
+  &--top-page{
+    line-height: $title-line-height;
+    font-weight: 200;
+    white-space: normal;
+    word-wrap: normal;
+    font-size: 49px;
+    text-shadow: 1px 2px 4px $color-back;
+    @include mq(lg){
+      font-size: 38px;
+    }
+    @include mq(md){
+      font-size: 29px;
+    }
+    @include mq(){
+      font-size: 27px;
+    }
+  }
+  &--top-page-sub{
+    line-height: $title-line-height;
+    font-weight: 400;
+    white-space: normal;
+    word-wrap: normal;
+    font-size: 27px;
+    @include mq(lg){
+      font-size: 23px;
+    }
+    @include mq(md){
+      font-size: 21px;
+    }
+    @include mq(){
+      font-size: 18px;
+    }
+  }
+}

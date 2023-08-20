@@ -1,0 +1,71 @@
+.c-form-checkbox{
+  position: relative;
+  &__checkbox{
+    display: none;
+    &:checked{
+      + .c-form-checkbox__label::before{
+        opacity: 1;
+      }
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &__label{
+    font-size: $font-size-default;
+    color: $color-sub;
+    position: relative; 
+    padding-left: 24px;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+      padding-left: 21px;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+    &::before{
+      position: absolute; 
+      content: ""; 
+      display: block; 
+      top: 6.5px; 
+      left: 6.5px; 
+      width: 3px; 
+      height: 8px; 
+      border-right: 2.5px solid $color-acc; 
+      border-bottom: 2.5px solid $color-acc; 
+      transform: rotate(45deg); 
+      opacity: 0;
+      @include mq(md){
+        top: 6px; 
+        left: 6px;
+      }
+      @include mq(){
+        top: 5px; 
+        left: 5.5px;
+      }
+    }
+    &::after{
+      position: absolute; 
+      content: ""; 
+      display: block; 
+      top: 4px; 
+      left: 0; 
+      width: 15px;
+      height: 15px;
+      border: 1.5px solid $color-outline; 
+      border-radius: 50%; 
+      @include mq(md){
+        width: 14px;
+        height: 14px;
+      }
+      @include mq(){
+        width: 13px;
+        height: 13px;
+        top: 2.5px;
+      }
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}

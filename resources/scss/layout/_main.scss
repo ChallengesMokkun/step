@@ -1,0 +1,17 @@
+.l-main{
+  width: $site-width;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  margin-bottom: 80px;
+  @include mq(lg){
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    box-sizing: border-box;
+  }
+  @include mq(){
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}

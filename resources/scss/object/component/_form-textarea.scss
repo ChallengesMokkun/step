@@ -1,0 +1,162 @@
+.c-form-textarea{
+  overflow: hidden;
+  resize: none;
+  font-family: $font-family-1, $font-family-2, $font-family-default;
+  box-sizing: border-box;
+  border: 1px solid $color-outline;
+  border-radius: 6px;
+  padding: $textarea-padding-Vt $textarea-padding-Hn;
+  font-weight: 200;
+  color: $color-sub;
+  &:focus,
+  &:focus-visible{
+    outline: 0;
+    border: $textarea-border solid $color-focus;
+    box-shadow: 0 0 6px $color-focus;
+  }
+  @include mq(md){
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @include mq(){
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+  &--err{
+    background-color: $color-err-form;
+    border: none;
+    &:focus,
+    &:focus-visible{
+      outline: 0;
+      border: 1px solid $color-err;
+      box-shadow: 0 0 6px $color-err;
+    }
+  }
+  &--intro{
+    //heightとfont-sizeとline-heightを調整する
+    @include textareaHt($form-intro-font-size, $intro-lines, default);
+    @include mq(lg){
+      @include textareaHt($form-intro-font-size, $intro-lines, lg);
+    }
+    @include mq(md){
+      @include textareaHt($form-intro-font-size, $intro-lines, md);
+    }
+    @include mq(){
+      @include textareaHt($form-intro-font-size, $intro-lines, sm);
+    }
+  }
+  &--step-title{
+    padding-left: 8px;
+    padding-right: 8px;
+    //heightとfont-sizeとline-heightを調整する
+    @include textareaHt($form-step-title-font-size, $step-title-lines, default);
+    @include mq(lg){
+      padding-left: 18px;
+      padding-right: 18px;
+      @include textareaHt($form-step-title-font-size, $step-title-lines, lg);
+    }
+    @include mq(md){
+      padding-left: 19px;
+      padding-right: 19px;
+      @include textareaHt($form-step-title-font-size, $step-title-lines, md);
+    }
+    @include mq(){
+      padding-left: 9px;
+      padding-right: 9px;
+      @include textareaHt($form-step-title-font-size, $step-title-lines, sm);
+    }
+  }
+  &--phrase{
+    padding-left: 18px;
+    padding-right: 18px;
+    //heightとfont-sizeとline-heightを調整する
+    @include textareaHt($form-phrase-font-size, $phrase-lines, default);
+    @include mq(lg){
+      padding-left: 8px;
+      padding-right: 8px;
+      @include textareaHt($form-phrase-font-size, $phrase-lines, lg);
+    }
+    @include mq(md){
+      padding-left: 19px;
+      padding-right: 19px;
+      @include textareaHt($form-phrase-font-size, $phrase-lines, md);
+    }
+    @include mq(){
+      padding-left: 7px;
+      padding-right: 6px;
+      @include textareaHt($form-phrase-font-size, $phrase-lines, sm);
+    }
+  }
+  &--step{
+    padding-left: 20px;
+    padding-right: 20px;
+    //heightとfont-sizeとline-heightを調整する
+    @include textareaHt($form-step-font-size, $step-lines, default);
+    @include mq(lg){
+      padding-left: 16px;
+      padding-right: 16px;
+      @include textareaHt($form-step-font-size, $step-lines, lg);
+    }
+    @include mq(md){
+      padding-left: 20px;
+      padding-right: 20px;
+      @include textareaHt($form-step-font-size, $step-lines, md);
+    }
+    @include mq(){
+      padding-left: 13px;
+      padding-right: 12px;
+      @include textareaHt($form-step-font-size, $step-lines, sm);
+    }
+  }
+  &--step-detail{
+    padding-left: 12px;
+    padding-right: 12px;
+    //heightとfont-sizeとline-heightを調整する
+    @include textareaHt($form-step-detail-font-size, map-get($step-detail-lines, default), default);
+    @include mq(lg){
+      padding-left: 14px;
+      padding-right: 14px;
+      @include textareaHt($form-step-detail-font-size, map-get($step-detail-lines, lg), lg);
+    }
+    @include mq(md){
+      @include textareaHt($form-step-detail-font-size, map-get($step-detail-lines, md), md);
+    }
+    @include mq(){
+      padding-left: 12px;
+      padding-right: 12px;
+      @include textareaHt($form-step-detail-font-size, map-get($step-detail-lines, sm), sm);
+    }
+  }
+  &--supplement{
+    padding-left: 15px;
+    padding-right: 15px;
+    //heightとfont-sizeとline-heightを調整する
+    @include textareaHt($form-supp-font-size, map-get($supp-lines, default), default);
+    @include mq(lg){
+      padding-left: 14px;
+      padding-right: 14px;
+      @include textareaHt($form-supp-font-size, map-get($supp-lines, lg), lg);
+    }
+    @include mq(md){
+      @include textareaHt($form-supp-font-size, map-get($supp-lines, md), md);
+    }
+    @include mq(){
+      padding-left: 8px;
+      padding-right: 8px;
+      @include textareaHt($form-supp-font-size, map-get($supp-lines, sm), sm);
+    }
+  }
+  &--inquiry{
+    //heightとfont-sizeとline-heightを調整する
+    @include textareaHt($form-inquiry-font-size, $inquiry-lines, default);
+    @include mq(lg){
+      @include textareaHt($form-inquiry-font-size, $inquiry-lines, lg);
+    }
+    @include mq(md){
+      @include textareaHt($form-inquiry-font-size, $inquiry-lines, md);
+    }
+    @include mq(){
+      @include textareaHt($form-inquiry-font-size, $inquiry-lines, sm);
+    }
+  }
+}

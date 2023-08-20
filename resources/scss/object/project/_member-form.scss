@@ -1,0 +1,47 @@
+.p-member-form{
+  &__form-wrapper{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 35px 65px;
+    background-color: $color-back;
+    border-radius: 6px;
+    @include mq(md){
+      width: 478px;
+    }
+    @include mq(){
+      width: 345px;
+      padding: 24px;
+    }
+  }
+  &__title{
+    margin-bottom: 32px;
+    @include mq(){
+      margin-bottom: 24px;
+    }
+  }
+  &__err-msg{
+    text-align: center;
+    margin-bottom: 24px;
+    @include mq(){
+      margin-bottom: 16px;
+    }
+  }
+  &__action-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 44px;
+    align-items: center;
+    @include mq(){
+      margin-top: 35px;
+    }
+  }
+  &__plain-text{
+    margin-bottom: 35px;
+    text-align: center;
+    @include mq(){
+      margin-bottom: 24px;
+    }
+  }
+}

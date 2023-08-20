@@ -1,0 +1,38 @@
+.c-flash-msg{
+  position: fixed;
+  background-color: $color-notify;
+  border-radius: 6px;
+  padding: 24px 15px;
+  color: $color-main;
+  font-size: $font-size-default;
+  font-weight: 400;
+  z-index: 3;
+  box-shadow: 2px 3px 4px $color-sub;
+  @include mq(md){
+    font-size: $font-size-phab-default;
+  }
+  @include mq(){
+    font-size: $font-size-sp-default;
+  }
+  
+  //登場・退場時の動き
+  &.v-leave-to,
+  &.v-enter-from{
+    opacity: 0;
+    transform: translateY(-200px);
+    box-shadow: 8px 8px 11px $color-outline;
+  }
+  &.v-enter-active{
+    transition: opacity 1.5s, box-shadow 1.5s, left .1s;
+  }
+  &.v-leave-active{
+    transition: all 1.5s;
+  }
+  &.v-leave-from,
+  &.v-enter-to{
+    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
+    box-shadow: 2px 3px 4px $color-sub;
+  }
+}

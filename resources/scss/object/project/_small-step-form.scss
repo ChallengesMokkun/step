@@ -1,0 +1,125 @@
+.p-small-step-form{
+  padding-top: 24px;
+  padding-bottom: 24px;
+  position: relative;
+  @include mq(md){
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  &:first-of-type{
+    padding-top: initial;
+    .p-small-step-form__line{
+      top: map-get($list-num-size, default);//数字
+      height: calc(24px + (100% - #{map-get($list-num-size, default)}));// padding上の不足分 + 親要素と数字の差
+    }
+  }
+  &:last-child{
+    margin-bottom: 35px;
+    @include mq(){
+      margin-bottom: 24px;
+    }
+    .p-small-step-form__line{
+      height: calc(100% - #{map-get($list-num-size, default)} - (24px * 2)) ; // 親要素 - 数字 - padding上下
+    }
+  }
+  &__title-wrapper{
+    display: flex;
+  }
+  &__number-wrapper{
+    margin-right: map-get($list-num-form-margin-r, default);
+    @include mq(lg){
+      margin-right: map-get($list-num-form-margin-r, lg);
+    }
+    @include mq(md){
+      margin-right: map-get($list-num-form-margin-r, md);
+    }
+    @include mq(){
+      margin-right: map-get($list-num-form-margin-r, sm);
+    }
+  }
+  &__list-number{
+    height: 100%;
+    @include mq(lg){
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__line{
+    height: calc(100% - #{map-get($list-num-size, default)}); // 親要素と数字の差
+    top: calc(#{map-get($list-num-size, default)} + 24px); // padding上 + 数字
+    @include mq(lg){
+      display: none;
+    }
+  }
+  &__step-wrapper{
+    //widthを調整
+    @include adjustStepWrapperWd(default);
+    @include mq(lg){
+      @include adjustStepWrapperWd(lg);
+    }
+    @include mq(md){
+      @include adjustStepWrapperWd(md);
+    }
+    @include mq(){
+      @include adjustStepWrapperWd(sm);
+    }
+  }
+  &__content-wrapper{
+    //数字 + 数字のmargin-right
+    margin-left: calc(#{map-get($list-num-size, default)} + #{map-get($list-num-form-margin-r, default)});
+    @include mq(lg){
+      margin-left: initial;
+    }
+    @include mq(){
+      margin-left: 15px;
+    }
+  }
+  &__err-msg{
+    margin-bottom: 5px;
+  }
+  &__item{
+    display: inline-block;
+    margin-bottom: 3px;
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+  &__label{
+    margin-bottom: 3px;
+    margin-left: 16px;
+  }
+  &__form-textarea{
+    width: 100%;
+  }
+  &__form-counter{
+    margin-top: 5px;
+    @include mq(){
+      margin-top: initial;
+    }
+  }
+  &__cmd-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    @include mq(lg){
+      margin-left: 8px;
+    }
+  }
+
+  //登場時・削除時のアニメーション
+  &.v-enter-active,
+  &.v-leave-active{
+    transition: opacity .75s;
+  }
+  &.v-enter-from,
+  &.v-leave-to{
+    opacity: 0;
+  }
+  &.v-enter-to,
+  &.v-leave-from{
+    opacity: 1;
+  }
+}

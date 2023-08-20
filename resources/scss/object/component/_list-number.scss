@@ -1,0 +1,51 @@
+.c-list-number{
+  display: inline-block;
+  position: relative;
+  &__number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-main;
+    background-color: $color-notify;
+    font-weight: 300;
+    font-size: 27px;
+    width: map-get($list-num-size, default);
+    height: map-get($list-num-size, default);
+    //border-radiusを調整
+    @include roundListNum(default);
+    @include mq(lg){
+      font-size: 20px;
+      width: map-get($list-num-size, lg);
+      height: map-get($list-num-size, lg);
+      @include roundListNum(lg);
+    }
+    @include mq(md){
+      font-size: 24px;
+      width: map-get($list-num-size, md);
+      height: map-get($list-num-size, md);
+      @include roundListNum(md);
+    }
+    @include mq(){
+      font-size: 16px;
+      width: map-get($list-num-size, sm);
+      height: map-get($list-num-size, sm);
+      @include roundListNum(sm);
+    }
+  }
+  &__line{
+    position: absolute;
+    background-color: $color-notify;
+    //線の太さ(width)と横方向(left)の位置調整
+    @include adjustListLineHn(default);
+    @include mq(lg){
+      @include adjustListLineHn(lg);
+    }
+    @include mq(md){
+      @include adjustListLineHn(md);
+    }
+    @include mq(){
+      @include adjustListLineHn(sm);
+    }
+  }
+
+}

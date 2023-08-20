@@ -1,0 +1,240 @@
+.p-step-detail{
+  width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq(lg){
+    width: 720px;
+  }
+  @include mq(md){
+    width: 540px;
+  }
+  @include mq(){
+    width: 340px;
+  }
+  &__label-category-link{
+    margin-right: 15px;
+    &:hover{
+      background-color: $color-acc;
+    }
+    @include mq(){
+      padding: 4px 7px;
+    }
+  }
+  &__header{
+    margin-bottom: 44px;
+    @include mq(lg){
+      width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include mq(md){
+      margin-bottom: 16px;
+      width: 500px;
+    }
+    @include mq(){
+      width: 325px;
+    }
+  }
+  &__header-row{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    @include mq(md){
+      margin-bottom: 2px;
+    }
+  }
+  &__datetime{
+    margin-left: auto;
+  }
+  &__header-item-icon,
+  &__contributor-pic-wrapper{
+    @include mq(){
+      width: 13px;
+      height: 13px;
+      margin-right: 3px;
+    }
+  }
+  &__header-item-text{
+    @include mq(){
+      font-size: 11px;
+    }
+  }
+  &__contributor-name{
+    @include mq(){
+      font-size: 11px;
+    }
+  }
+  &__title-phrase-wrapper{
+    margin-bottom: 80px;
+    @include mq(lg){
+      width: 700px;
+      margin-bottom: 60px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include mq(md){
+      padding-left: initial;
+      width: 500px;
+    }
+    @include mq(){
+      margin-bottom: 35px;
+      width: 325px;
+    }
+  }
+  &__title{
+    overflow: hidden;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    //max-heightを調整する
+    @include titleMaxHt($step-title-font-size, $step-title-lines, default);
+    @include mq(lg){
+      padding-bottom: 3px;
+      @include titleMaxHt($step-title-font-size, $step-title-lines, lg);
+    }
+    @include mq(md){
+      @include titleMaxHt($step-title-font-size, $step-title-lines, md);
+    }
+    @include mq(){
+      width: 320px;
+      padding-bottom: 2px;
+      @include titleMaxHt($step-title-font-size, $step-title-lines, sm);
+    }
+  }
+  &__phrase{
+    overflow: hidden;
+    padding-bottom: 4px;
+    //max-heightを調整する
+    @include titleMaxHt($phrase-font-size, $phrase-lines, default);
+    @include mq(lg){
+      padding-bottom: 2px;
+      @include titleMaxHt($phrase-font-size, $phrase-lines, lg);
+    }
+    @include mq(md){
+      padding-bottom: 3px;
+      @include titleMaxHt($phrase-font-size, $phrase-lines, md);
+    }
+    @include mq(){
+      padding-bottom: 1px;
+      @include titleMaxHt($phrase-font-size, $phrase-lines, sm);
+    }
+  }
+  &__small-step-wrapper{
+    margin-bottom: 35px;
+  }
+  &__item{
+    font-size: 18px;
+    margin-bottom: 8px;
+    padding-left: $font-size-default;
+    @include mq(lg){
+      font-size: 16px;
+    }
+    @include mq(md){
+      padding-left: 15px;
+    }
+    @include mq(){
+      font-size: 14px;
+      padding-left: 21px;
+    }
+  }
+  &__msg-area{
+    background-color: $color-back;
+    padding: 8px 15px;
+    border-radius: 6px;
+    //min-heightを調整する
+    @include plainTextMinHt($supp-font-size, $supp-lines-min, default);
+    @include mq(lg){
+      @include plainTextMinHt($supp-font-size, $supp-lines-min, lg);
+    }
+    @include mq(md){
+      @include plainTextMinHt($supp-font-size, $supp-lines-min, md);
+    }
+    @include mq(){
+      padding-left: 13px;
+      padding-right: 13px;
+      margin-left: auto;
+      margin-right: auto;
+      width: calc(#{map-get($supp-font-size, sm)} * 23); // フォントサイズ * 文字数
+      @include plainTextMinHt($supp-font-size, $supp-lines-min, sm);
+    }
+  }
+  &__plain-text{
+    font-size: map-get($supp-font-size, default);
+    @include mq(lg){
+      font-size: map-get($supp-font-size, lg);
+    }
+    @include mq(md){
+      font-size: map-get($supp-font-size, md);
+    }
+    @include mq(){
+      font-size: map-get($supp-font-size, sm);
+    }
+  }
+  &__action-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 44px;
+    height: 41px;
+    @include mq(md){
+      height: 40px;
+    }
+    @include mq(){
+      justify-content: space-around;
+      height: 36.5px;
+    }
+  }
+  &__tweet-btn{
+    & + .p-step-detail__btn,
+    & + .p-step-detail__action-btn-wrapper{
+      margin-left: 70px;
+      @include mq(lg){
+        margin-left: 50px;
+      }
+      @include mq(){
+        margin-left: initial;
+      }
+    }
+  }
+  &__back-link{
+    &:nth-of-type(1){
+      margin-bottom: 47px;
+    }
+    &:nth-of-type(2){
+      margin-top: 47px;
+    }
+  }
+  &__status-bar{
+    margin-left: auto;
+    margin-bottom: 16px;
+    width: 300px;
+    @include mq(lg){
+      margin-bottom: 11px;
+    }
+    @include mq(md){
+      margin-right: 2px;
+      width: 240px;
+    }
+    @include mq(){
+      margin-right: 7.5px;
+      width: 200px;
+      margin-bottom: 8px;
+    }
+  }
+  &__status-text{
+    font-size: 13px;
+    @include mq(md){
+      font-size: 12px;
+    }
+    @include mq(){
+      font-size: 10px;
+    }
+  }
+
+  &__err-msg{
+    text-align: center;
+    margin-bottom: 24px;
+    @include mq(){
+      margin-bottom: 16px;
+    }
+  }
+}

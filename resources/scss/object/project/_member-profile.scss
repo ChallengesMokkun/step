@@ -1,0 +1,95 @@
+.p-member-profile{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  width: 750px;
+  height: 420px;
+  @include mq(lg){
+    width: 700px;
+    height: 395px;
+  }
+  @include mq(md){
+    height: initial;
+    display: block;
+    width: 345px;
+  }
+  @include mq(){
+    width: 297px;
+  }
+  &__pic-wrapper{
+    width: 370px;
+    height: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 16px;
+    background-color: $color-back;
+    border-radius: 6px;
+    @include mq(lg){
+      width: 345px;
+      height: 345px;
+    }
+    @include mq(){
+      width: 297px;
+      height: 297px;
+    }
+  }
+  &__name-wrapper{
+    margin-top: 5.5px;
+    background-color: $color-back;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 7px;
+    border-radius: 6px;
+  }
+  &__item{
+    text-align: center;
+    font-weight: 400;
+  }
+  &__intro-wrapper{
+    overflow: hidden;
+    padding: 8px 16px;
+    width: 370px;
+    box-sizing: border-box;
+    background-color: $color-back;
+    max-height: 100%;
+    border-radius: 6px;
+    @include mq(lg){
+      width: 345px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @include mq(md){
+      margin-top: 7px;
+      height: calc(#{$intro-lines} * #{floor(map-get($intro-font-size, md) * $intro-line-height)} + 8px * 2);//行数 * (フォントサイズ * 行間 少数切り捨て) + padding上下
+    }
+    @include mq(){
+      width: 297px;
+      height: calc(#{$intro-lines} * #{floor(map-get($intro-font-size, sm) * $intro-line-height)} + 8px * 2);
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+  &__plain-text{
+    max-height: calc(100% - 3px);
+    overflow: hidden;
+    //font-sizeとline-heightを調整する
+    @include formatFontHt($intro-font-size, $intro-line-height, default);
+    @include mq(lg){
+      max-height: 100%;
+      padding-bottom: 1px;
+      @include formatFontHt($intro-font-size, $intro-line-height, lg);
+    }
+    @include mq(md){
+      padding-bottom: 2px;
+      @include formatFontHt($intro-font-size, $intro-line-height, md);
+    }
+    @include mq(){
+      padding-bottom: 2px;
+      @include formatFontHt($intro-font-size, $intro-line-height, sm);
+    }
+  }
+}

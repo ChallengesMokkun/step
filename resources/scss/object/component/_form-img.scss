@@ -1,0 +1,31 @@
+.c-form-img{
+  display: flex;
+  border: 1px solid $color-outline;
+  border-radius: 6px;
+  background-color: $color-main;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  &--err{
+    background-color: $color-err-form;
+    border: none;
+  }
+  &__file-selector{
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &__hint{
+    text-align: center;
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.c-form-text{
+  font-family: $font-family-1, $font-family-2, $font-family-default;
+  box-sizing: border-box;
+  border: 1px solid $color-outline;
+  border-radius: 6px;
+  padding: 13px $font-size-default;
+  font-size: $font-size-default;
+  font-weight: 200;
+  color: $color-sub;
+  &:focus,
+  &:focus-visible{
+    outline: 0;
+    border: 1px solid $color-focus;
+    box-shadow: 0 0 6px $color-focus;
+  }
+  @include mq(md){
+    font-size: $font-size-phab-default;
+    padding: 11px $font-size-phab-default;
+  }
+  @include mq(){
+    font-size: $font-size-sp-default;
+    padding: 8px $font-size-sp-default;
+  }
+  &--err{
+    background-color: $color-err-form;
+    border: none;
+    &:focus,
+    &:focus-visible{
+      outline: 0;
+      border: 1px solid $color-err;
+      box-shadow: 0 0 6px $color-err;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.c-err-msg{
+  color: $color-err;
+  font-size: $font-size-default;
+  line-height: 1;
+  @include mq(md){
+    font-size: $font-size-phab-default;
+  }
+  @include mq(){
+    font-size: $font-size-sp-default;
+  }
+}

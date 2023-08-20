@@ -1,0 +1,120 @@
+.p-form-field-part{
+  margin-bottom: 24px;
+  @include mq(){
+    margin-bottom: 16px;
+  }
+  &__header{
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+  &__err-msg{
+    margin-bottom: 5px;
+    @include mq(){
+      margin-bottom: 2px;
+    }
+  }
+  &__item{
+    display: inline-block;
+    margin-bottom: 3px;
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+      margin-bottom: 2px;
+    }
+  }
+  &__label{
+    margin-bottom: 3px;
+    margin-left: 16px;
+    @include mq(md){
+      margin-left: 15px;
+    }
+    @include mq(){
+      margin-left: 13px;
+      margin-bottom: 2px;
+    }
+  }
+  &__form-text{
+    width: 100%;
+  }
+  &__form-textarea{
+    width: 100%;
+  }
+  &__form-counter{
+    margin-top: 5px;
+    @include mq(md){
+      margin-top: 2px;
+    }
+  }
+  &__form-number{
+    width: 85px;
+    text-align: center;
+    @include mq(){
+      width: 68px;
+    }
+  }
+  &__form-select{
+    &::before{
+      right: 11px;
+      top: 19px;
+      @include mq(){
+        top: 13px;
+      }
+    }
+    &::after{
+      right: 11px;
+      bottom: 15px;
+      @include mq(){
+        bottom: 11px;
+      }
+    }
+
+  }
+  &__select-box{
+    min-height: 47px;
+    @include mq(md){
+      min-height: 46px;
+    }
+    @include mq(){
+      min-height: 36.5px;
+    }
+  }
+  &__confirm-wrapper{
+    text-align: center;
+  }
+  &__form-checkbox{
+    display: inline-block;
+    margin-top: 8px;
+    margin-right: 24px;
+    &:last-child{
+      margin-right: initial;
+    }
+  }
+  &__cmd-text{
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__wrapper{
+    flex-basis: 50%;
+  }
+  &__plain-text{
+    white-space: normal;
+    word-wrap: normal;
+  }
+}

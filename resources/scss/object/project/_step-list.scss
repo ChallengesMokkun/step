@@ -1,0 +1,90 @@
+.p-step-list{
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  &:nth-of-type(2){
+    margin-top: 140px;
+    @include mq(){
+      margin-top: 110px;
+    }
+  }
+  @include mq(lg){
+    width: 720px;
+  }
+  @include mq(md){
+    width: 540px;
+  }
+  @include mq(){
+    width: 340px;
+  }
+  &__title{
+    margin-bottom: 32px;
+    @include mq(){
+      margin-bottom: 24px;
+    }
+  }
+  &__card-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 895px;
+    margin-top: 44px;
+    @include mq(lg){
+      width: 655px;
+    }
+    @include mq(md){
+      width: 440px;
+      margin-top: 35px;
+    }
+    @include mq(){
+      width: 320px;
+      margin-top: 24px;
+    }
+        
+    //登場時の動き
+    &.v-enter-active{
+      transition: opacity 2s;
+    }
+    &.v-enter-from{
+      opacity: 0;
+    }
+    &.v-enter-to{
+      opacity: 1;
+    }
+    
+    &--1-card{
+      justify-content: center;
+    }
+  }
+  &__result-wrapper{
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  &__item{
+    &:nth-of-type(1){
+      margin-right: 35px;
+      @include mq(md){
+        margin-right: 24px;
+      }
+      @include mq(){
+        margin-right: 16px;
+      }
+    }
+  }
+  &__status-text{
+    font-size: 13px;
+  }
+  &__err-msg{
+    text-align: center;
+  }
+  &__anchor{
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+}

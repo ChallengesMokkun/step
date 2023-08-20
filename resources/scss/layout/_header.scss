@@ -1,0 +1,222 @@
+.l-header{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  &__wrapper{
+    position: relative;
+    width: $site-width;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @include mq(lg){
+      width: 100%;
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+    @include mq(){
+      width: 100%;
+      padding-left: 4%;
+      padding-right: 4%;
+    }
+  }
+  &__logo-wrapper{
+    height: 30px;
+    @include mq(md){
+      height: 26px;
+    }
+    @include mq(){
+      height: 24px;
+    }
+  }
+  &__logo-link{
+    display: inline-block;
+    height: 100%;
+  }
+  &__logo{
+    height: 100%;
+  }
+  &__menu-wrapper{
+    &--login{
+      @include mq(lg){
+        position: relative;
+        width: 24px;
+        height: 16px;
+        align-self: center;
+      }
+    }
+  }
+  &__menu-list-wrapper{
+    &--login{
+      @include mq(lg){
+        position: fixed;
+        background-color: $color-curtain;
+        z-index: 1;
+        top: 0;
+        height: 100vh;
+        padding-top: 22px;
+        transition: 1.5s all;
+        width: calc(100vw + 1px);
+        right: calc(-100vw - 1px);
+      }
+      @include mq(lg){
+        padding-top: 24px;
+      }
+    }
+  }
+  &__menu-list{
+    display: flex;
+    &--login{
+      @include mq(lg){
+        height: calc(100% - 13px - 24px);//スマホを横向きにした時の調整 親要素(menu-list-wrapper--login) - 閉じるボタンの高さ - 親要素のpadding-top
+        max-height: 340px;
+        box-sizing: border-box;
+        padding-top: 44px;
+        padding-bottom: 23px;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+      }
+    }
+  }
+  &__menu-item{
+    &--not-login{
+      margin-right: 39px;
+      &:last-child{
+        margin-right: initial;
+      }
+      @include mq(lg){
+        margin-right: 24px;
+      }
+      @include mq(){
+        margin-right: 16px;
+      }
+    }
+    &--login{
+      margin-right: 32px;
+      &:last-child{
+        margin-right: initial;
+      }
+      @include mq(lg){
+        margin-right: initial;
+        text-align: center;
+      }
+    }
+  }
+  &__menu-link{
+    background-color: transparent;
+    border: none;
+    font-family: $font-family-1, $font-family-2, $font-family-default;
+    font-weight: 200;
+    &:hover{
+      cursor: pointer;
+    }
+    &--not-login{
+      font-size: $font-size-default;
+      color: $color-sub;
+      @include mq(md){
+       font-size: $font-size-phab-default;
+      }
+      @include mq(){
+        font-size: $font-size-sp-default;
+      }
+    }
+    &--login{
+      font-size: $font-size-default;
+      color: $color-sub;
+      @include mq(lg){
+        font-size: 21px;
+        color: $color-main;
+        font-size: $font-size-default;
+      }
+    }
+  }
+  &__menu-btn-wrapper{
+    display: none;
+    @include mq(lg){
+      display: flex;
+      width: 21px;
+      height: 13px;
+      align-content: space-between;
+      flex-wrap: wrap;
+    }
+    &--close{
+      @include mq(lg){
+        transition: 3s all;
+        opacity: 1;
+        position: fixed;
+        z-index: 2;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+    &--open{
+      @include mq(lg){
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        &:hover{
+          cursor: pointer;
+          .l-header__menu-btn--open{
+            transition: .5s all;
+            &:nth-of-type(1){
+              position: relative;
+              transform: rotate(45deg);
+              top: 7px;
+              @include mq(lg){
+                top: 6px;
+              }
+            }
+            &:nth-of-type(2){
+              opacity: 0;
+            }
+            &:nth-of-type(3){
+              position: relative;
+              transform: rotate(-45deg);
+              bottom: 7px;
+              @include mq(lg){
+                bottom: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include mq(lg){
+      width: 21px;
+      height: 13px;
+    }
+  }
+  &__menu-btn{
+    height: 1px;
+    width: 100%;
+    &--close{
+      background-color: $color-sub;
+    }
+    &--open{
+      background-color: $color-main;
+      transition: .5s all;
+    }
+  }
+}
+
+//ヘッダーメニュー 開閉時の挙動
+#l-header__menu-switch{
+  display: none;
+  &:checked ~ .l-header__menu-btn-wrapper--close{
+    @include mq(lg){
+      transition: .1s all;
+      z-index: -1;
+      opacity: 0;
+    }
+  }
+  &:checked ~ .l-header__menu-list-wrapper--login{
+    @include mq(lg){
+      transition: 1s all;
+      right: 0;
+    }
+  }
+}

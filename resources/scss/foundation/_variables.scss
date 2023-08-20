@@ -1,0 +1,256 @@
+// 色
+$color-main: #fff;
+$color-sub: #121314;
+$color-outline: #a7a7a7;
+$color-curtain: #414243;
+$color-back: #f5f5f5;
+$color-focus: #cbe4c1;
+$color-err: #dc3545;
+$color-err-form: #ea868f;
+$color-err-form-translucent: rgba(211,0,19,0.47);
+$color-link: #237823;
+$color-acc: #fd7e14;
+$color-notify: #2cb696;
+$color-tweet: #1d9bf0;
+$color-cleared: #fc4330;
+
+// フォント
+$font-family-1: 'M PLUS 1';
+$font-family-2: 'Noto Sans JP';
+$font-family-default: sans-serif;
+
+// デフォルトのフォントサイズ
+$font-size-default: 16px;
+$font-size-phab-default: 15px;
+$font-size-sp-default: 13px;
+
+//行間
+$title-line-height: 1.2; //title デフォルトの行間
+$plain-text-line-height-default: 1.5; //plain-text デフォルトの行間
+$textarea-line-height: 1.2; //textarea デフォルトの行間
+$step-card-char-line-height: 1.1; //step-cardの行間
+$intro-line-height: 1.2; //プロフィールページ 自己紹介文の行間
+
+// 表示幅とブレイクポイント
+$site-width: 980px;
+$breakpoints: (
+  'sm': 'screen and (max-width: 575px)',
+  'md': 'screen and (max-width: 767px)',
+  'lg': 'screen and (max-width: 1023px)',
+) !default;
+
+
+
+//STEP詳細・子STEP詳細・STEP編集・登録
+//STEP番号のサイズ(一辺)
+$list-num-size: (
+  'sm': 40px,
+  'md': 60px,
+  'lg': 50px,
+  'default': 70px
+);
+//線の太さ
+$list-line-thickness: (
+  'sm': 2px,
+  'md': 3px,
+  'lg': 3px,
+  'default': 3px
+);
+
+//STEP詳細・子STEP詳細
+//子STEPのpadding上下
+$small-step-padding-Vt: (
+  'sm': 16px,
+  'md': 24px,
+  'lg': 20px,
+  'default': 24px
+);
+//borderの太さ
+$small-step-border-thickness: 1px;
+
+//子STEPタイトルwrapperの高さ
+$small-step-title-ht: (
+  'sm': 40px,
+  'md': 60px,
+  'lg': 50px,
+  'default': 70px
+);
+
+//STEP編集・登録
+//STEP番号のmargin-right
+$list-num-form-margin-r: (
+  'sm': 13px,
+  'md': 18px,
+  'lg': 35px,
+  'default': 68px
+);
+
+
+//textarea
+$textarea-padding-Vt: 8px; //textareaのpadding上下
+$textarea-padding-Hn: 16px; //textareaのpadding左右(デフォルト)
+$textarea-border: 1px; //textareaのborder
+//ユーザー登録・プロフィール編集
+$intro-lines: 21; //自己紹介文の行数
+$form-intro-font-size: (
+  'sm': 13px,
+  'md': 15px,
+  'lg': 16px,
+  'default': 16px
+);
+
+//お問い合わせ
+$inquiry-lines: 29;//ご用件詳細の行数
+$form-inquiry-font-size: (
+  'sm': 13px,
+  'md': 15px,
+  'lg': 16px,
+  'default': 16px
+);
+
+//STEP編集・登録
+//STEPタイトル
+$step-title-lines: 2;//行数
+$form-step-title-font-size: (
+  'sm': 16px,
+  'md': 25px,
+  'lg': 17px,
+  'default': 22px
+);
+//キャッチコピー
+$phrase-lines: 2;//行数
+$form-phrase-font-size: (
+  'sm': 13px,
+  'md': 20px,
+  'lg': 14px,
+  'default': 17px
+);
+//子STEPタイトル
+$step-lines: 2;//行数
+$form-step-font-size: (
+  'sm': 13px,
+  'md': 21px,
+  'lg': 15px,
+  'default': 18px
+);
+//子STEP説明
+$step-detail-lines: (//行数
+  'sm': 28,
+  'md': 22,
+  'lg': 17,
+  'default': 17
+);
+$form-step-detail-font-size: (
+  'sm': 13px,
+  'md': 15px,
+  'lg': 15px,
+  'default': 16px
+);
+//補足・メッセージ
+$supp-lines: (//行数
+  'sm': 29,
+  'md': 21,
+  'lg': 17,
+  'default': 16
+);
+$form-supp-font-size: (
+  'sm': 14px,
+  'md': 15px,
+  'lg': 15px,
+  'default': 17px
+);
+
+
+//title・plain-text
+//STEP詳細・子STEP詳細
+//STEPタイトル
+$step-title-font-size: (
+  'sm': 16px,
+  'md': 25px,
+  'lg': 17px,
+  'default': 22px
+);
+//キャッチコピー
+$phrase-font-size: (
+  'sm': 13px,
+  'md': 20px,
+  'lg': 14px,
+  'default': 17px
+);
+//子STEPタイトル
+$step-font-size: (
+  'sm': 14px,
+  'md': 23px,
+  'lg': 16px,
+  'default': 19px
+);
+//子STEP説明
+$step-detail-lines-min: 3;//最低行数
+$step-detail-font-size: (
+  'sm': 13px,
+  'md': 15px,
+  'lg': 15px,
+  'default': 16px
+);
+//補足・メッセージ
+$supp-lines-min: 3;//最低行数
+$supp-font-size: (
+  'sm': 13px,
+  'md': 15px,
+  'lg': 15px,
+  'default': 17px
+);
+
+//プロフィールページ
+$intro-font-size: (
+  'sm': 13px,
+  'md': 15px,
+  'lg': 15px,
+  'default': 16px
+);
+
+//step-card
+//STEPタイトル
+$step-card-title-lines: 2;//行数
+$step-card-title-font-size: (
+  'sm': 15px,
+  'md': 20px,
+  'lg': 15px,
+  'default': 20px
+);
+//キャッチコピー
+$step-card-phrase-lines: 2;//行数
+$step-card-phrase-font-size: (
+  'sm': 12px,
+  'md': 16px,
+  'lg': 12px,
+  'default': 16px
+);
+
+
+//step-card
+//padding上
+$step-card-padding-top: (
+  'sm': 9px,
+  'md': 13px,
+  'lg': 9px,
+  'default': 13px
+);
+//padding下
+$step-card-padding-btm: (
+  'sm': 32px,
+  'md': 43px,
+  'lg': 32px,
+  'default': 43px
+);
+//padding左右
+$step-card-padding-Hn: (
+  'sm': 10px,
+  'md': 20px,
+  'lg': 10px,
+  'default': 20px
+);
+
+
+
+

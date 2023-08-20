@@ -1,0 +1,28 @@
+.p-pagenation{
+  margin-top: 44px;
+  @include mq(){
+    margin-top: 35px;
+  }
+  &__wrapper{
+    display: flex;
+    justify-content: center;
+  }
+  &__page-list{
+    display: flex;
+  }
+  &__page{
+    margin-right: 16px;
+    &:last-child{
+      margin-right: initial;
+    }
+    @include mq(lg){
+      margin-right: 13px;
+    }
+    @include mq(md){
+      margin-right: 11px;
+    }
+    @include mq(){
+      margin-right: 8px;
+    }
+  }
+}

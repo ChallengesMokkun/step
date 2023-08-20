@@ -1,0 +1,87 @@
+.p-search-box{
+  text-align: center;
+  overflow: hidden;
+  &__form-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    overflow: hidden;
+    
+    //登場・退場時の動き
+    &.v-enter-active{
+      transition: opacity .75s;
+    }
+    &.v-leave-active{
+      transition: opacity .5s;
+    }
+    &.v-enter-from,
+    &.v-leave-to{
+      opacity: 0;
+    }
+    &.v-enter-to,
+    &.v-leave-from{
+      opacity: 1;
+    }
+  }
+  &__form-text{
+    width: 100%;
+    margin-bottom: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  &__form-select{
+    width: 140px;
+    height: 41px;
+    @include mq(md){
+      height: 40px;
+    }
+    @include mq(){
+      width: 126px;
+      height: 37px;
+    }
+    &::before{
+      right: 11px;
+      top: 16px;
+      @include mq(){
+        top: 14px;
+      }
+    }
+    &::after{
+      right: 11px;
+      bottom: 12px;
+      @include mq(md){
+        right: 11px;
+        bottom: 11px;
+      }
+      @include mq(){
+        bottom: 10px;
+      }
+    }
+  }
+  &__select-box{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 14px;
+    width: 100%;
+    @include mq(){
+      font-size: 12px;
+    }
+  }
+  &__cmd{
+    font-size: $font-size-default;
+    display: inline-block;
+    margin-bottom: 8px;
+    &:hover{
+      text-decoration: underline;
+    }
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+}

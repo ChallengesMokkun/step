@@ -1,0 +1,63 @@
+.p-mypage-menu{
+  margin-top: 140px;
+  @include mq(){
+    margin-top: 110px;
+  }
+  &__title{
+    margin-bottom: 32px;
+    @include mq(){
+      margin-bottom: 24px;
+    }
+  }
+  &__link-wrapper{
+    background-color: $color-back;
+    padding:16px 24px;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px $color-outline;
+    margin-left: auto;
+    margin-right: auto;
+    width: 480px;
+    box-sizing: border-box;
+    @include mq(md){
+      width: 440px;
+    }
+    @include mq(){
+      width: 320px;
+      padding: 11px 8px;
+    }
+  }
+  &__link-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    &:last-child{
+      margin-bottom: initial;
+    }
+    @include mq(md){
+      margin-bottom: 15px;
+    }
+    @include mq(){
+      margin-bottom: 12px;
+    }
+  }
+  &__link{
+    width: 128px;
+    text-align: center;
+    @include mq(md){
+      width: 120px;
+    }
+    @include mq(){
+      width: 96px;
+      font-size: 12px;
+    }
+  }
+  &__anchor{
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: 12px;
+    }
+  }
+}

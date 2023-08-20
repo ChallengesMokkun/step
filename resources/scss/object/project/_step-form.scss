@@ -1,0 +1,66 @@
+.p-step-form{
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  @include mq(lg){
+    width: 720px;
+  }
+  @include mq(md){
+    width: 540px;
+  }
+  @include mq(){
+    width: 340px;
+  }
+  &__title{
+    margin-bottom: 32px;
+    @include mq(){
+      margin-bottom: 24px;
+    }
+  }
+  &__action-wrapper{
+    text-align: right;
+    margin-top: 44px;
+  }
+  &__link{
+    margin-top: 16px;
+    @include mq(){
+      margin-top: 47px;
+    }
+  }
+  &__anchor{
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+  &__cmd-wrapper{
+    text-align: center;
+    .p-step-form__plain-text{
+      color: $color-link;
+    }
+  }
+  &__err-msg{
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  &__plain-text{
+    margin-bottom: 16px;
+  }
+  &__action-btn-wrapper{
+    position: absolute;
+    bottom: 39px;
+    right: 210px;
+    @include mq(md){
+      bottom: 38px;
+    }
+    @include mq(){
+      bottom: 65.5px;
+      right: initial;
+      left: 0;
+    }
+  }
+}

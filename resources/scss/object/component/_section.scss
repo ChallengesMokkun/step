@@ -1,0 +1,63 @@
+.c-section{
+  padding-left: 35px;
+  @include mq(lg){
+    padding-left: 31px;
+  }
+  @include mq(md){
+    padding-left: 28px;
+  }
+  @include mq(){
+    padding-left: 24px;
+  }
+  &__part{
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+  &__inside-section{
+    padding-left: 35px;
+    @include mq(lg){
+      padding-left: 24px;
+    }
+    @include mq(md){
+      padding-left: 15px;
+    }
+    @include mq(){
+      padding-left: 13px;
+    }
+  }
+  &__inside-section-part{
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+  &__below-inside-section{
+    padding-left: 35px;
+    @include mq(lg){
+      padding-left: 24px;
+    }
+    @include mq(md){
+      padding-left: 15px;
+    }
+    @include mq(){
+      padding-left: 13px;
+    }
+  }
+  &__below-inside-section-part{
+    font-size: $font-size-default;
+    @include mq(md){
+      font-size: $font-size-phab-default;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+    }
+  }
+}

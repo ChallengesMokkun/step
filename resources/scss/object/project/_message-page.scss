@@ -1,0 +1,52 @@
+.p-message-page{
+  &__title{
+    margin-bottom: 80px;
+    @include mq(lg){
+      margin-bottom: 60px;
+    }
+    @include mq(){
+      margin-bottom: 40px;
+    }
+  }
+  &__chapter-title{
+    font-size: 24px;
+    margin-bottom: 24px;
+    font-weight: 400;
+    @include mq(){
+      font-size: 16px;
+    }
+  }
+  &__err-msg{
+    color: $color-sub;
+    text-align: center;
+  }
+  &__chapter-wrapper{
+    margin-bottom: 44px;
+  }
+  &__plain-text{
+    margin-bottom: 16px;
+    white-space: normal;
+    word-wrap: normal;
+  }
+  &__section{
+    margin-top: initial;
+    margin-bottom: initial;
+  }
+  &__section-part{
+    margin-bottom: 8px;
+  }
+  &__inside-section{
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  &__inside-section-part{
+    margin-bottom: 4px;
+  }
+  &__below-inside-section{
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+  &__below-inside-section-part{
+    margin-bottom: 4px;
+  }
+}

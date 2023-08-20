@@ -1,0 +1,107 @@
+.p-top-page{
+  width: 980px;
+  padding: 3%;
+  margin: auto;
+  @include mq(lg){
+    width: 720px;
+  }
+  @include mq(md){
+    width: 540px;
+  }
+  @include mq(){
+    width: 340px;
+    padding: 4%;
+  }
+  &__pic-title-area{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+  &__pic-wrapper{
+    width: 400px;
+    height: 400px;
+    @include mq(lg){
+      width: 300px;
+      height: 300px;
+    }
+    @include mq(md){
+      width: 216px;
+      height: 216px;
+    }
+    @include mq(){
+      width: 210px;
+      height: 210px;
+    }
+  }
+  &__title{
+    position: absolute;
+    top: 39%;
+    left: 7%;
+    @include mq(lg){
+      left: 4%;
+    }
+    @include mq(){
+      top: initial;
+      bottom: -16%;
+      left: 6%;
+    }
+  }
+  &__nl{
+    display: none;
+    @include mq(){
+      display: inline;
+    }
+  }
+  &__msg-btn-area{
+    margin-top: 52px;
+    margin-left: 8px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    @include mq(md){
+      display: block;
+      margin-left: initial;
+    }
+    @include mq(){
+      margin-top: 120px;
+    }
+  }
+  &__sub-title{
+    margin-bottom: 11px;
+    @include mq(md){
+      margin-bottom: 7px;
+    }
+    @include mq(){
+      margin-bottom: 15px;
+    }
+  }
+  &__plain-text{
+    white-space: normal;
+    word-wrap: normal;
+    &:last-child{
+      margin-bottom: initial;
+    }
+    @include mq(lg){
+      font-size: 15px;
+    }
+    @include mq(){
+      font-size: $font-size-sp-default;
+      margin-bottom: 6px;
+    }
+  }
+  &__btn{
+    margin-right: 130px;
+    @include mq(lg){
+      margin-right: 23px;
+    }
+    @include mq(md){
+      display: block;
+      margin-top: 21px;
+      margin-left: auto;
+      margin-right: 16px;
+    }
+    @include mq(){
+      margin-right: 8px;
+    }
+  }
+}

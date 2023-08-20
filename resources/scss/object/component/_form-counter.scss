@@ -1,0 +1,14 @@
+.c-form-counter{
+  text-align: right;
+  font-size: $font-size-default;
+  color: $color-sub;
+  &--err{
+    color: $color-err;
+  }
+  @include mq(md){
+    font-size: $font-size-phab-default;
+  }
+  @include mq(){
+    font-size: $font-size-sp-default;
+  }
+}

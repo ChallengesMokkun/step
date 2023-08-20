@@ -1,0 +1,46 @@
+.p-img-uploader{
+  &__upload-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 370px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    @include mq(md){
+      height: 348px;
+      margin-bottom: 5px;
+    }
+    @include mq(){
+      height: 297px;
+      margin-bottom: 2px;
+    }
+  }
+  &__form-img{
+    width: 100%;
+    height: 370px;
+    @include mq(md){
+      height: 348px;
+    }
+    @include mq(){
+      height: 297px;
+    }
+  }
+  &__file-selector{
+    width: 100%;
+    height: 370px;
+    @include mq(md){
+      height: 348px;
+    }
+    @include mq(){
+      height: 297px;
+    }
+  }
+  &__picture{
+    position: relative;
+  }
+  &__cmd-wrapper{
+    text-align: right;
+  }
+}
